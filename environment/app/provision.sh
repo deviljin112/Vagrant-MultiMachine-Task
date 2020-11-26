@@ -23,4 +23,7 @@ sudo apt-get install nginx -y
 sudo service nginx restart
 
 cd /home/ubuntu/app
+
+echo "export DB_HOST=192.168.10.150" >> ~/.bashrc
+
 pm2 start app.js
