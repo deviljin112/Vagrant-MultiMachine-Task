@@ -19,6 +19,8 @@ sudo npm install pm2 -g
 
 sudo apt-get install nginx -y
 
+sudo cp /vagrant/nginx.conf /etc/nginx/
+
 # finally, restart the nginx service so the new config takes hold
 sudo service nginx restart
 
@@ -26,4 +28,6 @@ cd /home/ubuntu/app
 
 echo "export DB_HOST=192.168.10.150" >> ~/.bashrc
 
-pm2 start app.js
+source ~/.bashrc
+
+pm2 start app.js --update-env
